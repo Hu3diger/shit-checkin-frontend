@@ -1,0 +1,29 @@
+@import '../../../scss/styles.scss';
+
+.image-placeholder {
+	border: 1px dashed $gray-500;
+	max-width: 300px !important;
+	max-height: 200px !important;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+
+	i {
+		color: $gray-500;
+		line-height: 160px;
+		font-size: 46px;
+		display: block;
+		text-align: center;
+	}
+
+	img {
+        max-width: 300px !important;
+		min-width: 300px !important;
+		width: 300px;
+        min-height: 200px !important; 
+        max-height: 200px !important;
+		height: 300px;
+        
+        object-fit: cover;
+	}
+}

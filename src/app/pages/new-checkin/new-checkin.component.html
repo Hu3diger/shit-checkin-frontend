@@ -1,1 +1,77 @@
-<p>NewCheckinComponent</p>
+<div class="container">
+    <div class="row mt-5 mx-auto">
+        <div class="col-12">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="exampleInputEmail1">Your name</label>
+                    <input type="email" class="form-control" placeholder="Enter your name here">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your name with anyone
+                        else.</small>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="exampleInputPassword1">Checkin hour</label>
+                    <input type="password" class="form-control" placeholder="Put like 11:00">
+                    <small id="emailHelp" class="form-text text-muted">Bathroom checkin time.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3 mx-auto">
+        <div class="col-12 col-md-4">
+            <label for="plantImage">Checkin image</label>
+            <div class="row">
+                <div class="col-12">
+                    <div class="image-placeholder mb-3 text-center">
+                        <i class="fa fa-picture-o" *ngIf="!checkinImage"></i>
+                        <img class="w-100 h-100" [src]="checkinImage" *ngIf="checkinImage" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <input type="file" class="form-control" #checkin (change)="onSelectFile($event, 'checkin')"
+                    [hidden]="true">
+                <div class="form-group col-4">
+                    <button type="button" class="btn btn-outline-primary btn-block" (click)="chooseImage(checkin)">
+                        <span *ngIf="checkinImage">Change</span>
+                        <span *ngIf="!checkinImage">Select</span>
+                    </button>
+                </div>
+                <div class="form-group col-4">
+                    <button type="button" class="btn btn-outline-danger btn-block" (click)="checkinImage=null"
+                        *ngIf="checkinImage">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+            <label for="plantImage">Checkout image</label>
+            <div class="row">
+                <div class="col-12">
+                    <div class="image-placeholder mb-3 text-center">
+                        <i class="fa fa-picture-o" *ngIf="!checkoutImage"></i>
+                        <img class="w-100 h-100" [src]="checkoutImage" *ngIf="checkoutImage" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <input type="file" class="form-control" #checkout (change)="onSelectFile($event, 'checkout')"
+                    [hidden]="true">
+                <div class="form-group col-4">
+                    <button type="button" class="btn btn-outline-primary btn-block" (click)="chooseImage(checkout)">
+                        <span *ngIf="checkoutImage">Change</span>
+                        <span *ngIf="!checkoutImage">Select</span>
+                    </button>
+                </div>
+                <div class="form-group col-4">
+                    <button type="button" class="btn btn-outline-danger btn-block" (click)="checkoutImage=null"
+                        *ngIf="checkoutImage">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mx-auto mt-5">
+        <div class="col-6">
+            <input class="btn btn-primary float-left" type="submit" value="Submit">
+        </div>
+    </div>
+</div>
