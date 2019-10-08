@@ -4,5 +4,5 @@ This project was developed for fun and for the subject of Software Manage and Co
 
 Authors of the idea: [Altieri](https://github.com/AltieriR) and [Martin](https://github.com/Hu3diger)
 
-Group: [Altieri](https://github.com/AltieriR), [Martin](https://github.com/Hu3diger), [Crystian](https://github.com/CrystianJordan) and [Mateus](https://github.com/mateusrcm)
+Project group: [Altieri](https://github.com/AltieriR), [Martin](https://github.com/Hu3diger), [Crystian](https://github.com/CrystianJordan) and [Mateus](https://github.com/mateusrcm)
 
