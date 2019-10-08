@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col" class="w-15">#</th>
+                        <th scope="col" class="w-50">Name</th>
+                        <th scope="col" class="w-20">Checkin</th>
+                        <th scope="col" class="menu"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let log of logs">
+                        <th scope="row">{{ log.id }}</th>
+                        <td>{{ log.user }}</td>
+                        <td>{{ log.checkin }}</td>
+                        <td>
+                            <app-dot-menu [options]="dotMenu(log)"></app-dot-menu>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
