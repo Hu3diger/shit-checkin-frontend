@@ -7,6 +7,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CheckinLogsComponent } from './pages/checkin-logs/checkin-logs.component';
 import { NewCheckinComponent } from './pages/new-checkin/new-checkin.component';
 import { DotMenuComponent } from './components/dot-menu/dot-menu.component';
+import { CommonModule } from '@angular/common';
+import { LogService } from './services/log.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,9 +22,13 @@ import { DotMenuComponent } from './components/dot-menu/dot-menu.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    CommonModule,
     BsDropdownModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    LogService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

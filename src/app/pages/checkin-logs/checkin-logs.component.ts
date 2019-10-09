@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { DotMenuItem } from 'src/app/components/dot-menu/dot-menu.component';
+import { LogService } from 'src/app/services/log.service';
 
 @Component({
     selector: 'app-checkin-logs',
@@ -7,13 +8,19 @@ import { DotMenuItem } from 'src/app/components/dot-menu/dot-menu.component';
     styleUrls: ['./checkin-logs.component.scss']
 })
 
-export class CheckinLogsComponent {
+export class CheckinLogsComponent implements OnInit {
 
-    logs = [
-        { id: 1, user: 'Alberto', checkin: '11:00' },
-        {  id: 2, user: 'Astolfo', checkin: '10:45' },
-        { id: 3, user: 'Francisco', checkin: '10:20' },
-    ]
+    logs = [];
+
+    constructor(
+        readonly logService: LogService
+    ) { }
+
+    ngOnInit() {
+        this.logService.findAll().then((response: any) => {
+            this.logs = response;
+        })
+    }
 
     dotMenu(log) {
         return [
@@ -23,15 +30,15 @@ export class CheckinLogsComponent {
         ]
     }
 
-    inspect(log){
+    inspect(log) {
         console.log('O cagão foi o ' + log.user);
     }
 
-    edit(log){
+    edit(log) {
         console.log('Edit', log);
     }
 
-    delete(log){
+    delete(log) {
         console.log('Delete', log);
     }
 }
